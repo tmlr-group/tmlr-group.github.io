@@ -201,6 +201,7 @@
               <br>
               <b>Abstract:</b> Trustworthy learning under noisy data has been a long-standing problem in machine learning and related fields. The first part of this tutorial will introduce the basics and state-of-the-art research of trustworthy learning under noisy data from various aspects, including trustworthy statistical learning, trustworthy representation learning, applications, and theories. At the beginning of the tutorial, I will briefly give an overview of this field and explain the structure of the first tutorial. Then, a fundamental question in trustworthy statistical learning under noisy data is to study the difference between the classifier learned with noisy data and the classifier learned with clean data. A algorithm is classifier-consistent if the classifier learned from the noisy data is consistent to the optimal classifier defined by using clean data. Therefore, we will comprehensively review recent progress in building classifier-consistent algorithms. Specifically, we will dive into the basics of the robust-loss-function-based methods and the transition-matrix-based methods. Lastly, It is challenging to train deep neural networks robustly with noisy data, as the capacity of deep neural networks is so high that they can totally overfit on these noisy labels. Therefore, we will comprehensively review the recent progress of trustworthy representation learning, namely label-noise representation learning. Moreover, we will introduce three representative techniques in label-noise representation learning, such as data perspective “estimating the noise transition matrix”, training perspective “training on selected samples” and regularization perspective “stochastic integrated gradient underweighted ascent”.
               <br>
+              <b>Short Bio:</b> Bo Han is currently an Assistant Professor in Machine Learning and a Director of Trustworthy Machine Learning and Reasoning Group at Hong Kong Baptist University, and a BAIHO Visiting Scientist at RIKEN Center for Advanced Intelligence Project (RIKEN AIP), where his research focuses on machine learning, deep learning, foundation models, and their applications. He was a Visiting Faculty Researcher at Microsoft Research (2022) and a Postdoc Fellow at RIKEN AIP (2019-2020), working with Prof. Masashi Sugiyama. He received his Ph.D. degree in Computer Science from University of Technology Sydney (2015-2019). During 2018-2019, he was a Research Intern with the AI Residency Program at RIKEN AIP, working on trustworthy representation learning (e.g., Co-teaching and Masking). He also works on causal reasoning for trustworthy learning (e.g., CausalAdv and CausalNL). He has co-authored two machine learning monographs, including Machine Learning with Noisy Labels (MIT Press), and Trustworthy Machine Learning under Imperfect Data (Springer Nature). He has served as Area Chairs of NeurIPS, ICML, ICLR, UAI and AISTATS. He has also served as Action Editors and Editorial Board Members of JMLR, MLJ, TMLR, JAIR and IEEE TNNLS. He received Outstanding Paper Award at NeurIPS and Outstanding Area Chair at ICLR.
           </p>
         </div>
       </div>
@@ -208,46 +209,63 @@
   </div>
 </section>
 
+
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Part-I: Trustworthy Machine Learning Under Noisy Data</h2>
+        <h2 class="title is-3">II: Trustworthy Machine Learning Under Adversarial Data</h2>
         <table class="imgtable">
                 <tbody>
                     <tr valign="top">
-                        <td><img src="./../static/images/bhan.jpg" alt="Bo Han" height="200" width="140"></td>
+                        <td><img src="./../static/images/fliu.png" alt="Feng Liu" height="400" width="280"></td>
                         <td align="left">
                             <p>
-                                <span style="font-size: 120%"> <b>Bo Han</b> </span>
-                            </p>
-                            <p>
-                                Assistant Professor @ Electronic Engineering
-                                <br />
-                                Cooperative Medianet Innovation Center
-                                <br />
-                                Shanghai Jiao Tong University, China
-                                <br />
-                            </p>
-                            <p>
-                                Research Scientist
-                                <br />
-                                Shanghai AI Laboratory, China
-                                <br />
-                            </p>
-                            <p>
-                                Email: Sunarker[at]sjtu.edu.cn
-                                <br />
-                                [<a href="https://scholar.google.com/citations?user=w8oDh9QAAAAJ&hl=zh-CN">Google Scholar</a>] [<a href="https://github.com/Sunarker">Github</a>]
+                                <span style="font-size: 120%"> <b>Feng Liu</b> </span>
+                                <br>
+                                    Assistant Professor @ <a href="https://cis.unimelb.edu.au/" target="_blank"> School of Computing and Information Systems,</a>
+                                    <br>
+                                    <a href="https://www.unimelb.edu.au/" target="_blank">The University of Melbourne</a>
+                                    <br>
+                                    Visiting Scientist @ <a href="https://aip.riken.jp/labs/generic_tech/imperfect_inf_learn/?lang=en" target="_blank">Imperfect Information Learning Team</a>,
+                                    <br>
+                                    <a href="http://www.riken.jp/en/" target="_blank">RIKEN</a>
+                                    <a href="https://aip.riken.jp/" target="_blank">Center for Advanced Intelligence Project (RIKEN-AIP)</a>
+                                    <br>
+                                    Visting Fellow @ DeSI Lab,<br>
+                                    <a href="https://www.uts.edu.au/research-and-teaching/our-research/centre-artificial-intelligence" target="_blank">
+                                    Australian Artificial Intelligence Institute,</a>
+                                    <a href="https://www.uts.edu.au/" target="_blank">UTS</a>
+                                    <br>
+                                    E-mail: fengliu.ml [at] gmail.com or feng.liu1 [at] unimelb.edu.au<br>
+                                    [<a href="https://scholar.google.com/citations?hl=en&user=eqe3JS8AAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Google Scholar</a>]
+                                    [<a href="https://github.com/fengliu90" target="_blank">Github</a>]
+                                    [<a href="https://github.com/tmlr-group" target="_blank">Group Website</a>]
+
+                                      <!-- PDF Link. -->
+                                      <span class="link-block">
+                                        <a href=""
+                                           class="external-link button is-normal is-rounded is-dark">
+                                          <span class="icon">
+                                              <i class="fas fa-file-pdf"></i>
+                                          </span>
+                                          <span>will be here</span>
+                                        </a>
+                                      </span>
                             </p>
                         </td>
                     </tr>
                 </tbody>
             </table>
         <div class="content has-text-justified">
-          <p>
-            Although we will introduce the basics of knowledge required, it is better to have some knowledge in linear algebra, probability, machine learning, and artificial intelligence. The emphasis will be on the intuition behind all the formal concepts, theories, and methodologies. The tutorial will be self-contained in a high level. Besides, audiences who are familiar with the basic robustness under noise, adversary and imbalance will find the comprehensive advances of areas.
+            <p>
+              <b>Duration:</b> 80 minuates
+              <br>
+              <b>Abstract:</b> Trustworthy learning under adversarial data has been a key to deploy the machine learning algorithms into the real world. The second part of this tutorial will introduce the basics and state-of-the-art research of trustworthy learning under adversarial data from various aspects, including trustworthy statistical learning, trustworthy representation learning, applications, and theories. At the beginning of this part, I will briefly give an overview of this field and explain the structure of the second tutorial. Then, a fundamental question in trustworthy statistical learning under adversarial data is to study how to measure the discrepancy between adversarial data and natural data. There are many ways to measure the discrepancy between two distributions. Therefore, we will comprehensively review recent progress in statistics that can be used to measure the distributional discrepancy between adversarial and natural data.
+    Lastly, it is very difficulty to train models that can generalize well on the adversarial data. Therefore, we will comprehensively review the recent progress of trustworthy learning with adversarial data, namely adversarial training. Moreover, we will introduce two representative techniques in adversarial training, such as non-reweighting adversarial training and reweighting adversarial training.
+              <br>
+              <b>Short Bio:</b> Feng Liu is a machine learning researcher with research interests in hypothesis testing and trustworthy machine learning. He is currently an ARC DECRA Fellow, an Assistant Professor in Machine Learning, a Director of Trustworthy Machine Learning and Reasoning Group at The University of Melbourne, and a Visiting Scientist at RIKEN Center for Advanced Intelligence Project (RIKEN AIP). He was a Lecturer and an Australian Laureate Postdoc Fellow at the Australian Artificial Intelligence Institute (2020-2022). He received his Ph.D. degree in Computer Science from the University of Technology Sydney (2016-2020). In 2019, he was a Research Intern with the AI Residency Program at RIKEN AIP, working on robust domain adaptation. In 2019, he also visited the Gatsby Unit at the UCL, working on deep kernel hypothesis testing. He has served as an area chair for ICLR, and senior program committees for IJCAI, ECAI, and program committees for NeurIPS, ICML, AISTATS, ICLR, KDD, ACML, AAAI and IJCAI. He has also served as an editor of ACM Transactions on Probabilistic Machine Learning and as an associate editor of the International Journal of Machine Learning and Cybernetics. He received the NeurIPS 2022 Outstanding Paper Award, the ICLR 2022 Outstanding Reviewer Award, and the NeurIPS 2021 Outstanding Reviewer Award.
           </p>
         </div>
       </div>
@@ -255,46 +273,54 @@
   </div>
 </section>
 
+
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Part-I: Trustworthy Machine Learning Under Noisy Data</h2>
+        <h2 class="title is-3">I: Trustworthy Machine Learning Under Noisy Data</h2>
         <table class="imgtable">
                 <tbody>
                     <tr valign="top">
-                        <td><img src="./../static/images/bhan.jpg" alt="Bo Han" height="200" width="140"></td>
+                        <td><img src="./../static/images/bhan.jpg" alt="Bo Han" height="400" width="280"></td>
                         <td align="left">
                             <p>
                                 <span style="font-size: 120%"> <b>Bo Han</b> </span>
-                            </p>
-                            <p>
-                                Assistant Professor @ Electronic Engineering
-                                <br />
-                                Cooperative Medianet Innovation Center
-                                <br />
-                                Shanghai Jiao Tong University, China
-                                <br />
-                            </p>
-                            <p>
-                                Research Scientist
-                                <br />
-                                Shanghai AI Laboratory, China
-                                <br />
-                            </p>
-                            <p>
-                                Email: Sunarker[at]sjtu.edu.cn
-                                <br />
-                                [<a href="https://scholar.google.com/citations?user=w8oDh9QAAAAJ&hl=zh-CN">Google Scholar</a>] [<a href="https://github.com/Sunarker">Github</a>]
+                                <br>
+                                Assistant Professor @ <a href="https://www.comp.hkbu.edu.hk/v1/?page=home" target="_blank">Department of Computer Science</a><br>
+                                <a href="https://www.hkbu.edu.hk/en.html" target="_blank">Hong Kong Baptist University</a>
+                                <br>
+                                <a href="https://www.riken.jp/en/news_pubs/news/2020/20200319_1/index.html" target="_blank">BAIHO</a> Visiting Scientist @ <a href="https://aip.riken.jp/labs/generic_tech/imperfect_inf_learn/" target="_blank">Imperfect Information Learning Team</a><br>
+                                <a href="http://www.riken.jp/en/" target="_blank">RIKEN</a>
+                                <a href="https://aip.riken.jp/" target="_blank">Center for Advanced Intelligence Project</a>
+                                <br>
+                                <a href="https://scholar.google.com/citations?user=nTNjqHwAAAAJ&hl=en" target="_blank">[Google Scholar]</a>
+                                <a href="https://github.com/bhanML" target="_blank">[Github]</a><br>
+                                E-mail: bhanml@comp.hkbu.edu.hk & bo.han@a.riken.jp<br>
+
+                                  <!-- PDF Link. -->
+                                  <span class="link-block">
+                                    <a href=""
+                                       class="external-link button is-normal is-rounded is-dark">
+                                      <span class="icon">
+                                          <i class="fas fa-file-pdf"></i>
+                                      </span>
+                                      <span>will be here</span>
+                                    </a>
+                                  </span>
                             </p>
                         </td>
                     </tr>
                 </tbody>
             </table>
         <div class="content has-text-justified">
-          <p>
-            Although we will introduce the basics of knowledge required, it is better to have some knowledge in linear algebra, probability, machine learning, and artificial intelligence. The emphasis will be on the intuition behind all the formal concepts, theories, and methodologies. The tutorial will be self-contained in a high level. Besides, audiences who are familiar with the basic robustness under noise, adversary and imbalance will find the comprehensive advances of areas.
+            <p>
+              <b>Duration:</b> 80 minuates
+              <br>
+              <b>Abstract:</b> Trustworthy learning under noisy data has been a long-standing problem in machine learning and related fields. The first part of this tutorial will introduce the basics and state-of-the-art research of trustworthy learning under noisy data from various aspects, including trustworthy statistical learning, trustworthy representation learning, applications, and theories. At the beginning of the tutorial, I will briefly give an overview of this field and explain the structure of the first tutorial. Then, a fundamental question in trustworthy statistical learning under noisy data is to study the difference between the classifier learned with noisy data and the classifier learned with clean data. A algorithm is classifier-consistent if the classifier learned from the noisy data is consistent to the optimal classifier defined by using clean data. Therefore, we will comprehensively review recent progress in building classifier-consistent algorithms. Specifically, we will dive into the basics of the robust-loss-function-based methods and the transition-matrix-based methods. Lastly, It is challenging to train deep neural networks robustly with noisy data, as the capacity of deep neural networks is so high that they can totally overfit on these noisy labels. Therefore, we will comprehensively review the recent progress of trustworthy representation learning, namely label-noise representation learning. Moreover, we will introduce three representative techniques in label-noise representation learning, such as data perspective “estimating the noise transition matrix”, training perspective “training on selected samples” and regularization perspective “stochastic integrated gradient underweighted ascent”.
+              <br>
+              <b>Short Bio:</b> Bo Han is currently an Assistant Professor in Machine Learning and a Director of Trustworthy Machine Learning and Reasoning Group at Hong Kong Baptist University, and a BAIHO Visiting Scientist at RIKEN Center for Advanced Intelligence Project (RIKEN AIP), where his research focuses on machine learning, deep learning, foundation models, and their applications. He was a Visiting Faculty Researcher at Microsoft Research (2022) and a Postdoc Fellow at RIKEN AIP (2019-2020), working with Prof. Masashi Sugiyama. He received his Ph.D. degree in Computer Science from University of Technology Sydney (2015-2019). During 2018-2019, he was a Research Intern with the AI Residency Program at RIKEN AIP, working on trustworthy representation learning (e.g., Co-teaching and Masking). He also works on causal reasoning for trustworthy learning (e.g., CausalAdv and CausalNL). He has co-authored two machine learning monographs, including Machine Learning with Noisy Labels (MIT Press), and Trustworthy Machine Learning under Imperfect Data (Springer Nature). He has served as Area Chairs of NeurIPS, ICML, ICLR, UAI and AISTATS. He has also served as Action Editors and Editorial Board Members of JMLR, MLJ, TMLR, JAIR and IEEE TNNLS. He received Outstanding Paper Award at NeurIPS and Outstanding Area Chair at ICLR.
           </p>
         </div>
       </div>
