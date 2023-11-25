@@ -105,7 +105,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Despite remarkable success in various applications, large language models (LLMs) are vulnerable to adversarial jailbreaks that make the safety guardrails void. However, previous studies for jailbreaks usually resort to brute-force optimization or extrapolations of a high computation cost, which might not be practical or effective. In this paper, inspired by the Milgram experiment that individuals can harm another person if they are told to do so by an authoritative figure, we disclose a lightweight method, termed as <i>DeepInception</i>, which can easily hypnotize LLM to be a jailbreaker and unlock its misusing risks. Specifically, DeepInception leverages the personification ability of LLM to construct a novel nested scene to behave, which realizes an adaptive way to escape the usage control in a normal scenario and provides the possibility for further direct jailbreaks. Empirically, we conduct comprehensive experiments to show its efficacy. Our DeepInception can achieve competitive jailbreak success rates with previous counterparts and realize a continuous jailbreak in subsequent interactions, which reveals the critical weakness of self-losing on both open/closed-source LLMs like Falcon, Vicuna, Llama-2, and GPT-3.5/4/4V. Our investigation appeals that people should pay more attention to the safety aspects of LLMs and a stronger defense against their misuse risks.
+            ``Knowledge should not be accessible only to those who can pay'' said Robert May, chair of UC's faculty Academic Senate. Similarly, machine learning should not be accessible only to those who can pay. Thus, machine learning should benefit to the whole world, especially for developing countries in Africa and Asia. When dataset sizes grow bigger, it is laborious and expensive to obtain perfect data (e.g., clean, safe, and balanced data), especially for developing countries. As a result, the volume of imperfect data becomes enormous, e.g., web-scale image and speech data with noisy labels, images with specific noise, and long-tail-distributed data. However, standard machine learning assumes that the supervised information is fully correct and intact. Therefore, imperfect data harms the performance of most of the standard learning algorithms, and sometimes even makes existing algorithms break down. In this tutorial, we focus on trustworthy learning when facing three types of imperfect data: noisy data, adversarial data, and long-tailed data.
           </p>
         </div>
       </div>
@@ -120,21 +120,20 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Introduction</h2>
+        <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
-          <!-- Add image -->
-          <div class="figure" style="align: left; text-align:center;">
-              <img
-                src="./static/paper_imgs/direct-indirect-examples.png"
-                alt="img description"
-                width="800"
-                height="600" />
-              <p><b>Figure 1</b>. Examples (with the latest GPT-4) of the direct and our instructions for jailbreak.</p>
-          </div>
-          <br>
-          <!-- / Add image -->
           <p>
-            Although attracting growing interest, existing jailbreaks focus on achieving an empirical success of attack by manually or automatically crafting adversarial prompts for specific targets, which might not be efficient or practical under the black-box usage. Specifically, <i>on the one hand</i>, as current LLMs are equipped with ethical and legal constraints, most jailbreaks with direct instructions (like the left-side of Figure 1) can be easily recognized and banned. <i>On the other hand</i>, and more importantly, it lacks an in-depth understanding of the overriding procedure, i.e., the core mechanism behind a successful jailbreak. In this work, we propose DeepInception from a new perspective to reveal LLM's weakness.
+            **Trustworthy Learning under Noisy Data.** There are a brunch of theories and approaches proposed to deal with noisy data. As far as we know, label-noise learning spans over two important ages in machine learning: statistical learning (i.e., shallow learning) and deep learning. In the age of statistical learning, label-noise learning focused on designing noise-tolerant losses or unbiased risk estimators. Nonetheless, in the age of deep learning, label-noise learning has more options to combat with noisy labels, such as designing biased risk estimators or leveraging memorization effects of deep networks. In this tutorial, we summarize the foundations and go through the most recent noisy-supervision-tolerant techniques. By participating the tutorial, the audience will gain a broad knowledge of label-noise learning from the viewpoint of statistical learning theory, deep learning, detailed analysis of typical algorithms and frameworks, and their real-world applications in industry.
+          </p>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            **Trustworthy Learning under Adversarial Data.** Existing deep learning techniques have made real-world deployments of machine learning algorithms be possible. However, the existence of adversarial data significantly reduces the safety of models trained using machine learning algorithms. To handle this risk, researchers focus on two aspects: detecting adversarial data before prediction/classification (a.k.a., adversarial data detection) and making the models generalize well on adversarial data (a.k.a., adversarial training). In this tutorial, we summarize the foundations and statistical properties of adversarial data and go through the most recent adversarial data detection and adversarial training techniques, from the viewpoint of statistics and machine learning, and their applications in industry.
+          </p>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            **Trustworthy Learning under Long-tailed Data.** Long-tailed learning has been drawn attention in many research areas like information retrieval, computer vision and medical data analysis, with developing a range of methods to deal with this problem. In a nutshell, the taxonomy behind these methods can be summarized as three categories, data augmentation, model personalization and loss design. All these methods explore a constrained trade-off between majorities and minorities to purse the best overall performance. In this tutorial, we will systematically discuss some basics of three different directions and give the specific examples to help the audiences to understand the past, present and future for long-tailed learning.
           </p>
         </div>
       </div>
