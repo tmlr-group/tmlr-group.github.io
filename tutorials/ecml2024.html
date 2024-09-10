@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!-- TypeIt package -->
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="AAAI'24 Tutorial">
+  <meta name="keywords" content="Trustworthy Machine Learning, Label Noise, Adversary, Imbalance">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trustworthy Machine Learning Under Imperfect Data</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./../static/css/bulma.min.css">
+  <link rel="stylesheet" href="./../static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./../static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./../static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./../static/css/index.css">
+  <link rel="icon" href="./../static/images/TMLR.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./../static/js/fontawesome.all.min.js"></script>
+  <script src="./../static/js/bulma-carousel.min.js"></script>
+  <script src="./../static/js/bulma-slider.min.js"></script>
+  <script src="./../static/js/index.js"></script>
+
+  <!-- Typing Effect JS -->
+  <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typeit/5.10.1/typeit.min.js"></script>
+  <!-- / Typing Effect JS -->
+
+  <style>
+    .bigdiv {
+      font-size: large;
+      font-family: "Courier New";
+      padding: 2rem;
+    }
+    p {
+      padding: 2rem;
+    }
+
+  </style>
+
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Trustworthy Machine Learning Under Imperfect Data</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://sunarker.github.io/">Jiangchao Yao</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://fengliu90.github.io/">Feng Liu</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://bhanml.github.io/">Bo Han</a><sup>3</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Shanghai Jiao Tong University</span>
+            <span class="author-block"><sup>2</sup>The University of Melbourne</span>
+            <span class="author-block"><sup>3</sup>Hong Kong Baptist University</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            ``Knowledge should not be accessible only to those who can pay'' said Robert May, chair of UC's faculty Academic Senate. Similarly, machine learning should not be accessible only to those who can pay. Thus, machine learning should benefit to the whole world, especially for developing countries in Africa and Asia. When dataset sizes grow bigger, it is laborious and expensive to obtain perfect data (e.g., clean, safe, and balanced data), especially for developing countries. As a result, the volume of imperfect data becomes enormous, e.g., web-scale image and speech data with noisy labels, images with specific noise, and long-tail-distributed data. However, standard machine learning assumes that the supervised information is fully correct and intact. Therefore, imperfect data harms the performance of most of the standard learning algorithms, and sometimes even makes existing algorithms break down. In this tutorial, we focus on trustworthy learning when facing three types of imperfect data: noisy data, adversarial data, and long-tailed data.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            <b>Trustworthy Learning under Noisy Data.</b> There are a brunch of theories and approaches proposed to deal with noisy data. As far as we know, label-noise learning spans over two important ages in machine learning: statistical learning (i.e., shallow learning) and deep learning. In the age of statistical learning, label-noise learning focused on designing noise-tolerant losses or unbiased risk estimators. Nonetheless, in the age of deep learning, label-noise learning has more options to combat with noisy labels, such as designing biased risk estimators or leveraging memorization effects of deep networks. In this tutorial, we summarize the foundations and go through the most recent noisy-supervision-tolerant techniques. By participating the tutorial, the audience will gain a broad knowledge of label-noise learning from the viewpoint of statistical learning theory, deep learning, detailed analysis of typical algorithms and frameworks, and their real-world applications in industry.
+            <br>
+            <br>
+            <b>Trustworthy Learning under Adversarial Data.</b> Existing deep learning techniques have made real-world deployments of machine learning algorithms be possible. However, the existence of adversarial data significantly reduces the safety of models trained using machine learning algorithms. To handle this risk, researchers focus on two aspects: detecting adversarial data before prediction/classification (a.k.a., adversarial data detection) and making the models generalize well on adversarial data (a.k.a., adversarial training). In this tutorial, we summarize the foundations and statistical properties of adversarial data and go through the most recent adversarial data detection and adversarial training techniques, from the viewpoint of statistics and machine learning, and their applications in industry.
+            <br>
+            <br>
+            <b>Trustworthy Learning under Long-tailed Data.</b> Long-tailed learning has been drawn attention in many research areas like information retrieval, computer vision and medical data analysis, with developing a range of methods to deal with this problem. In a nutshell, the taxonomy behind these methods can be summarized as three categories, data augmentation, model personalization and loss design. All these methods explore a constrained trade-off between majorities and minorities to purse the best overall performance. In this tutorial, we will systematically discuss some basics of three different directions and give the specific examples to help the audiences to understand the past, present and future for long-tailed learning.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Prerequisites for Audiences</h2>
+        <div class="content has-text-justified">
+          <p>
+            Although we will introduce the basics of knowledge required, it is better to have some knowledge in linear algebra, probability, machine learning, and artificial intelligence. The emphasis will be on the intuition behind all the formal concepts, theories, and methodologies. The tutorial will be self-contained in a high level. Besides, audiences who are familiar with the basic robustness under noise, adversary and imbalance will find the comprehensive advances of areas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">I: Trustworthy Machine Learning Under Noisy Data</h2>
+        <table class="imgtable">
+                <tbody>
+                    <tr valign="top">
+                        <td><img src="./../static/images/bhan.jpeg" alt="Bo Han" height="400" width="280"></td>
+                        <td align="left">
+                            <p>
+                                <span style="font-size: 120%"> <b>Bo Han</b> </span>
+                                <br>
+                                Assistant Professor @ <a href="https://www.comp.hkbu.edu.hk/v1/?page=home" target="_blank">Department of Computer Science</a><br>
+                                <a href="https://www.hkbu.edu.hk/en.html" target="_blank">Hong Kong Baptist University</a>
+                                <br>
+                                <a href="https://www.riken.jp/en/news_pubs/news/2020/20200319_1/index.html" target="_blank">BAIHO</a> Visiting Scientist @ <a href="https://aip.riken.jp/labs/generic_tech/imperfect_inf_learn/" target="_blank">Imperfect Information Learning Team</a><br>
+                                <a href="http://www.riken.jp/en/" target="_blank">RIKEN</a>
+                                <a href="https://aip.riken.jp/" target="_blank">Center for Advanced Intelligence Project</a>
+                                <br>
+                                <a href="https://scholar.google.com/citations?user=nTNjqHwAAAAJ&hl=en" target="_blank">[Google Scholar]</a>
+                                <a href="https://github.com/bhanML" target="_blank">[Github]</a><br>
+                                E-mail: bhanml@comp.hkbu.edu.hk & bo.han@a.riken.jp<br>
+
+                                  <!-- PDF Link. -->
+                                  <span class="link-block">
+                                    <a href="./../static/tutorials/ijcai24/Bo.pdf"
+                                       class="external-link button is-normal is-rounded is-dark">
+                                      <span class="icon">
+                                          <i class="fas fa-file-pdf"></i>
+                                      </span>
+                                      <span>Tutorial</span>
+                                    </a>
+                                  </span>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        <div class="content has-text-justified">
+            <p>
+              <b>Duration:</b> 80 minuates
+              <br>
+              <b>Abstract:</b> Trustworthy learning under noisy data has been a long-standing problem in machine learning and related fields. The first part of this tutorial will introduce the basics and state-of-the-art research of trustworthy learning under noisy data from various aspects, including trustworthy statistical learning, trustworthy representation learning, applications, and theories. At the beginning of the tutorial, I will briefly give an overview of this field and explain the structure of the first tutorial. Then, a fundamental question in trustworthy statistical learning under noisy data is to study the difference between the classifier learned with noisy data and the classifier learned with clean data. A algorithm is classifier-consistent if the classifier learned from the noisy data is consistent to the optimal classifier defined by using clean data. Therefore, we will comprehensively review recent progress in building classifier-consistent algorithms. Specifically, we will dive into the basics of the robust-loss-function-based methods and the transition-matrix-based methods. Lastly, It is challenging to train deep neural networks robustly with noisy data, as the capacity of deep neural networks is so high that they can totally overfit on these noisy labels. Therefore, we will comprehensively review the recent progress of trustworthy representation learning, namely label-noise representation learning. Moreover, we will introduce three representative techniques in label-noise representation learning, such as data perspective “estimating the noise transition matrix”, training perspective “training on selected samples” and regularization perspective “stochastic integrated gradient underweighted ascent”.
+              <br>
+              <b>Short Bio:</b> Bo Han is currently an Assistant Professor in Machine Learning and a Director of Trustworthy Machine Learning and Reasoning Group at Hong Kong Baptist University, and a BAIHO Visiting Scientist at RIKEN Center for Advanced Intelligence Project (RIKEN AIP), where his research focuses on machine learning, deep learning, foundation models, and their applications. He was a Visiting Faculty Researcher at Microsoft Research (2022) and a Postdoc Fellow at RIKEN AIP (2019-2020), working with Prof. Masashi Sugiyama. He received his Ph.D. degree in Computer Science from University of Technology Sydney (2015-2019). During 2018-2019, he was a Research Intern with the AI Residency Program at RIKEN AIP, working on trustworthy representation learning (e.g., Co-teaching and Masking). He also works on causal reasoning for trustworthy learning (e.g., CausalAdv and CausalNL). He has co-authored two machine learning monographs, including Machine Learning with Noisy Labels (MIT Press), and Trustworthy Machine Learning under Imperfect Data (Springer Nature). He has served as Area Chairs of NeurIPS, ICML, ICLR, UAI and AISTATS. He has also served as Action Editors and Editorial Board Members of JMLR, MLJ, TMLR, JAIR and IEEE TNNLS. He received Outstanding Paper Award at NeurIPS and Outstanding Area Chair at ICLR.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">II: Trustworthy Machine Learning Under Adversarial Data</h2>
+        <table class="imgtable">
+                <tbody>
+                    <tr valign="top">
+                        <td><img src="./../static/images/fliu.png" alt="Feng Liu" height="400" width="280"></td>
+                        <td align="left">
+                            <p>
+                                <span style="font-size: 120%"> <b>Feng Liu</b> </span>
+                                <br>
+                                    Assistant Professor @ <a href="https://cis.unimelb.edu.au/" target="_blank"> School of Computing and Information Systems,</a>
+                                    <br>
+                                    <a href="https://www.unimelb.edu.au/" target="_blank">The University of Melbourne</a>
+                                    <br>
+                                    Visiting Scientist @ <a href="https://aip.riken.jp/labs/generic_tech/imperfect_inf_learn/?lang=en" target="_blank">Imperfect Information Learning Team</a>,
+                                    <br>
+                                    <a href="http://www.riken.jp/en/" target="_blank">RIKEN</a>
+                                    <a href="https://aip.riken.jp/" target="_blank">Center for Advanced Intelligence Project (RIKEN-AIP)</a>
+                                    <br>
+                                    E-mail: fengliu.ml@gmail.com & feng.liu1@unimelb.edu.au<br>
+                                    [<a href="https://scholar.google.com/citations?hl=en&user=eqe3JS8AAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Google Scholar</a>]
+                                    [<a href="https://github.com/fengliu90" target="_blank">Github</a>]
+                                    <br>
+
+                                      <!-- PDF Link. -->
+                                      <span class="link-block">
+                                        <a href="./../static/tutorials/aaai24/Feng.pdf"
+                                           class="external-link button is-normal is-rounded is-dark">
+                                          <span class="icon">
+                                              <i class="fas fa-file-pdf"></i>
+                                          </span>
+                                          <span>Tutorial</span>
+                                        </a>
+                                      </span>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        <div class="content has-text-justified">
+            <p>
+              <b>Duration:</b> 80 minuates
+              <br>
+              <b>Abstract:</b> Trustworthy learning under adversarial data has been a key to deploy the machine learning algorithms into the real world. The second part of this tutorial will introduce the basics and state-of-the-art research of trustworthy learning under adversarial data from various aspects, including trustworthy statistical learning, trustworthy representation learning, applications, and theories. At the beginning of this part, I will briefly give an overview of this field and explain the structure of the second tutorial. Then, a fundamental question in trustworthy statistical learning under adversarial data is to study how to measure the discrepancy between adversarial data and natural data. There are many ways to measure the discrepancy between two distributions. Therefore, we will comprehensively review recent progress in statistics that can be used to measure the distributional discrepancy between adversarial and natural data.
+    Lastly, it is very difficulty to train models that can generalize well on the adversarial data. Therefore, we will comprehensively review the recent progress of trustworthy learning with adversarial data, namely adversarial training. Moreover, we will introduce two representative techniques in adversarial training, such as non-reweighting adversarial training and reweighting adversarial training.
+              <br>
+              <b>Short Bio:</b> Feng Liu is a machine learning researcher with research interests in hypothesis testing and trustworthy machine learning. He is currently an ARC DECRA Fellow, an Assistant Professor in Machine Learning, a Director of Trustworthy Machine Learning and Reasoning Group at The University of Melbourne, and a Visiting Scientist at RIKEN Center for Advanced Intelligence Project (RIKEN AIP). He was a Lecturer and an Australian Laureate Postdoc Fellow at the Australian Artificial Intelligence Institute (2020-2022). He received his Ph.D. degree in Computer Science from the University of Technology Sydney (2016-2020). In 2019, he was a Research Intern with the AI Residency Program at RIKEN AIP, working on robust domain adaptation. In 2019, he also visited the Gatsby Unit at the UCL, working on deep kernel hypothesis testing. He has served as an area chair for ICLR, and senior program committees for IJCAI, ECAI, and program committees for NeurIPS, ICML, AISTATS, ICLR, KDD, ACML, AAAI and IJCAI. He has also served as an editor of ACM Transactions on Probabilistic Machine Learning and as an associate editor of the International Journal of Machine Learning and Cybernetics. He received the NeurIPS 2022 Outstanding Paper Award, the ICLR 2022 Outstanding Reviewer Award, and the NeurIPS 2021 Outstanding Reviewer Award.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">III: Trustworthy Machine Learning Under Long-tailed Data</h2>
+        <table class="imgtable">
+                <tbody>
+                    <tr valign="top">
+                        <td><img src="./../static/images/jcyao.jpeg" alt="Jiangchao Yao" height="300" width="210"></td>
+                        <td align="left">
+                            <p>
+                                <span style="font-size: 120%"> <b>Jiangchao Yao</b> </span>
+                                <br />
+                                Assistant Professor @ Electronic Engineering
+                                <br />
+                                <a href="https://cmic.sjtu.edu.cn/EN/Default.aspx">Cooperative Medianet Innovation Center</a>
+                                <br />
+                                <a href="https://en.sjtu.edu.cn/">Shanghai Jiao Tong University, China</a>
+                                <br />
+                                Research Scientist
+                                <br />
+                                <a href="https://www.shlab.org.cn/">Shanghai AI Laboratory, China</a>
+                                <br />
+                                Email: Sunarker@sjtu.edu.cn
+                                <br />
+                                [<a href="https://scholar.google.com/citations?user=w8oDh9QAAAAJ&hl=zh-CN">Google Scholar</a>] [<a href="https://github.com/Sunarker">Github</a>]
+                                <br>
+                                  <!-- PDF Link. -->
+                                  <span class="link-block">
+                                    <a href="./../static/tutorials/ijcai24/jiangchao.pdf"
+                                       class="external-link button is-normal is-rounded is-dark">
+                                      <span class="icon">
+                                          <i class="fas fa-file-pdf"></i>
+                                      </span>
+                                      <span>Tutorial</span>
+                                    </a>
+                                  </span>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        <div class="content has-text-justified">
+            <p>
+              <b>Duration:</b> 80 minuates
+              <br>
+              <b>Abstract:</b> In recent years, long-tailed learning is revived in deep learning along with some new progresses on representation, model ensemble and loss design. The broad research areas related to this topic separately promote the development of long-tailed learning in the similar spirit.
+In this tutorial, we will first briefly review the core issues in long-tailed learning and its diverse downstream scenarios.
+Then, we will review classical methods to handle the long-tailed learning along with some exemplar methods from the perspectives of data augmentation, model ensemble and loss design.
+Finally, we will discuss some future directions in long-tailed learning under weakly-supervised and self-supervised settings.
+We hope our summarization can help the audiences systematically understand the past, present and future of long-tailed learning.
+              <br>
+              <b>Short Bio:</b> Jiangchao Yao is machine learning researcher whose interests fall on self-supervised and weakly-sueprvised long-tailed learning, label noise and adversarially robust learning. He received his dual Ph.D. degree under the supervision of Ya Zhang in Shanghai Jiao Tong University and Ivor W. Tsang in University of Technology Sydney in 2019. After that, he joined into DAMO Academy, Alibaba Group as an algorithm expert and spent three years to study the long-tailed characteristics of data in industrial recommender systems. He is currently an assistant professor in Cooperative Medianet Innovation Center, Shanghai Jiao Tong University and also a research scientist in Shanghai AI laboratory. He has published more than 40 papers on the journals and Conferences like IEEE Transactions on Pattern Analysis and Machine Intelligence,  IEEE Transactions on Knowledge Discovery and Engineering, ICML, NeurIPS, ICLR. He has served as program committees of ICML, NeurIPS, ICLR, KDD, ECML, ACML, AAAI and IJCAI.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Typing Effect Borader -->
+<style>
+
+  .outer_bordered {
+    /* width: 1000px; */
+    /* ;
+    height: 500px;
+    padding: 20px; */
+    display: inline-block;
+    border: 2px solid rgb(0, 157, 255);
+    border-radius: 8px;
+  }
+
+  .Q_bordered {
+    /* width: 700px; */
+    /* width: 700px;
+    height: 100px;
+    */
+    padding: 0px;
+    display: inline-block;
+    border: 2px solid rgb(0, 157, 255);
+    border-radius: 8px;
+  }
+
+  .A_bordered {
+    /* width: 800px;
+    height: 500px;
+    padding: 20px; */
+    display: inline-block;
+    border: 4px solid rgb(0, 157, 255);
+    border-radius: 8px;
+  }
+</style>
