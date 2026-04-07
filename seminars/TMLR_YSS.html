@@ -235,8 +235,27 @@
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100">
-                        <div class="ratio ratio-16x9">
-                            <img src="Figures/tmlr_seminar_young scientist_Yi.png" class="card-img-top" alt="Poster Preview 1" style="object-fit: cover; object-position: top;">
+                        <div class="ratio ratio-16x9 overflow-hidden" id="video-wrapper-1">
+        
+                            <div id="poster-1" class="poster-container" 
+                                style="cursor: pointer; position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                                onclick="startVideo('1', 'https://drive.google.com/file/d/1G-gAdGidTrye89rZQ09cj-87iOewN4om/preview')">
+                                
+                                <!-- use poster as figures -->
+                                <img src="Figures/tmlr_seminar_young scientist_Yi.png" 
+                                style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;"
+                                onerror="this.style.display='none'">
+                                
+                                <div class="play-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center;">
+                                    <div class="play-button">
+                                        <svg width="60" height="60" viewBox="0 0 64 64" fill="white" opacity="0.8">
+                                            <circle cx="32" cy="32" r="32" fill="black" fill-opacity="0.5"/>
+                                            <path d="M25 20 L45 32 L25 44 Z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Learning Dynamics of Deep Learning - Force Analysis of Deep Neural Networks</h5>
@@ -801,3 +820,78 @@
     </script>
 </body>
 </html>
+
+<style>
+    .poster-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    /* 遮罩层：默认半透明，悬停时变深 */
+    .play-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;
+    }
+
+    .poster-container:hover .play-overlay {
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+    /* 播放按钮图标 */
+    .play-button {
+        width: 60px;
+        height: 60px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        position: relative;
+        transition: transform 0.2s ease;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    /* 鼠标悬停时按钮放大 */
+    .poster-container:hover .play-button {
+        transform: scale(1.1);
+        background: #fff;
+    }
+
+    /* 播放按钮中间的小三角形 */
+    .play-button::after {
+        content: "";
+        position: absolute;
+        left: 23px;
+        top: 17px;
+        border-style: solid;
+        border-width: 13px 0 13px 20px;
+        border-color: transparent transparent transparent #222;
+    }
+</style>
+
+<!-- JavaScript 逻辑 -->
+<script>
+function startVideo(id, url) {
+    const wrapper = document.getElementById('video-wrapper-' + id);
+    
+    // 构造 iframe，添加 autoplay=1 确保点击后立即播放
+    // 注意：部分浏览器会因为静音策略拦截自动播放，这是正常现象
+    const videoSrc = url + (url.includes('?') ? '&' : '?') + 'autoplay=1';
+    
+    wrapper.innerHTML = `
+        <iframe 
+            src="${videoSrc}" 
+            allow="autoplay; fullscreen" 
+            allowfullscreen 
+            style="width:100%; height:100%; border:none;">
+        </iframe>
+    `;
+}
+</script>
