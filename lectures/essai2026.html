@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Trustworthy Machine Learning from Data to Models, summer course at ESSAI 2026.">
+  <meta name="keywords" content="Trustworthy Machine Learning, Safe AI, Explainable AI, Foundation Models, ESSAI 2026">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trustworthy Machine Learning from Data to Models - ESSAI 2026</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="../static/css/bulma.min.css">
+  <link rel="stylesheet" href="../static/css/index.css">
+
+  <script defer src="../static/js/fontawesome.all.min.js"></script>
+
+  <style>
+    .course-hero {
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .course-meta {
+      margin-top: 1rem;
+      color: #555555;
+    }
+
+    .course-title {
+      white-space: nowrap;
+    }
+
+    .course-facts {
+      background: #f7f9fb;
+      border-left: 4px solid #03a5fc;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .speaker-bio-container {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+    }
+
+    .speaker-bio-image {
+      flex-shrink: 0;
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .speaker-bio-text {
+      flex: 1;
+    }
+
+    .publication-links .button {
+      min-width: 180px;
+    }
+
+    @media (max-width: 768px) {
+      .course-title {
+        white-space: normal;
+      }
+
+      .speaker-bio-container {
+        flex-direction: column;
+      }
+
+      .speaker-bio-image {
+        width: 150px;
+        height: 150px;
+        align-self: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="hero course-hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title course-title">Trustworthy Machine Learning from Data to Models</h1>
+          <h2 class="title is-4 publication-title">Summer Course at <a href="https://essai2026.eu/program.php#id-C16">ESSAI 2026</a></h2>
+          <p class="is-size-5 course-meta">6-10 July 2026, Vienna, Austria</p>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://essai2026.eu/program.php#id-C16" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-external-link-alt"></i>
+                  </span>
+                  <span>ESSAI Course Page</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://bhanml.github.io/" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-user"></i>
+                  </span>
+                  <span>Speaker Homepage</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-11">
+        <div class="course-facts content">
+          <p><strong>Course Type:</strong> Introductory Course</p>
+          <p><strong>Speaker:</strong> Bo Han, Hong Kong Baptist University</p>
+          <p><strong>Keywords:</strong> Safe, Explainable and Trustworthy AI; Foundation Models</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-11">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Trustworthy machine learning seeks to handle critical problems in addressing the issues of robustness, privacy, security, reliability, and other desirable properties. The broad research area has achieved remarkable advancement and brings various emerging topics along with the progress. This course provides a systematic overview of the research problems under trustworthy machine learning covering the perspectives from data to model. Starting with fundamental data-centric learning, the course reviews learning with noisy data, long-tailed distribution, out-of-distribution data, and adversarial examples to achieve robustness. Delving into private and secured learning, this course elaborates on core methodologies of differential privacy, different attacking threats, and learning paradigms, to realize privacy protection and enhance security. Meanwhile, this course introduces several trendy issues related to the foundation models, including jailbreak prompts, watermarking, and hallucination, as well as causal learning and reasoning. To sum up, this course integrates commonly isolated research problems in a unified manner, which provides general problem setups, detailed sub-directions, and further discussion on its challenges or future developments.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-11">
+        <h2 class="title is-3">Lectures</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li id="lecture-i"><a href="#lecture-i">Lecture I: Trustworthy Data-centric Learning</a></li>
+            <li id="lecture-ii"><a href="#lecture-ii">Lecture II: Trustworthy Private and Secured Learning</a></li>
+            <li id="lecture-iii"><a href="#lecture-iii">Lecture III: Trustworthy Foundation Models</a></li>
+            <li id="lecture-iv"><a href="#lecture-iv">Lecture IV: Advanced Topics in Trustworthy Machine Learning</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-11">
+        <h2 class="title is-3">Speaker</h2>
+        <div class="content">
+          <div class="speaker-bio-container">
+            <img src="../static/images/Bo%20Han.png" alt="Bo Han" class="speaker-bio-image">
+            <div class="speaker-bio-text">
+              <p>
+                <a href="https://bhanml.github.io" style="color: #03a5fc; text-decoration: none;"><strong>Bo Han</strong></a> is currently an Associate Professor in Machine Learning and the Director of the Trustworthy Machine Learning and Reasoning Group at Hong Kong Baptist University, and a BAIHO Visiting Scientist of the Imperfect Information Learning Team at the RIKEN Center for Advanced Intelligence Project (RIKEN AIP). His research focuses on trustworthy machine learning. He has received multiple paper awards, including the Outstanding Paper Award at NeurIPS, the Most Influential Paper Award at NeurIPS, and the Outstanding Student Paper Award at a NeurIPS Workshop. He is also a recipient of the RGC Early CAREER Scheme, IEEE AI's 10 to Watch Award, IJCAI Early Career Spotlight, INNS Aharon Katzir Young Investigator Award, RIKEN BAIHO Award, Dean's Award for Outstanding Achievement, and the Microsoft Research StarTrack Scholars Program.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-11">
+        <h2 class="title is-3">Related Links</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li><a href="https://essai2026.eu/program.php#id-C16">ESSAI 2026 course listing</a></li>
+            <li><a href="https://github.com/tmlr-group">TMLR Group</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website template is adapted from the PAKDD 2026 tutorial page and the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project page template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
