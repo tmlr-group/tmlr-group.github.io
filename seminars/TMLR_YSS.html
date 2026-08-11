@@ -239,6 +239,37 @@
         
                             <div id="poster-1" class="poster-container" 
                                 style="cursor: pointer; position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                                onclick="startVideo('1', 'https://drive.google.com/file/d/1_C1g3ep36fGh4-ODJUh5SdU4a5RDep3p/preview')">
+                                
+                                <!-- use poster as figures -->
+                                <img src="Figures/tmlr_seminar_young_scientist_Daniel-Wurgaft.png" 
+                                style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;"
+                                onerror="this.style.display='none'">
+                                
+                                <div class="play-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center;">
+                                    <div class="play-button">
+                                        <svg width="60" height="60" viewBox="0 0 64 64" fill="white" opacity="0.8">
+                                            <circle cx="32" cy="32" r="32" fill="black" fill-opacity="0.5"/>
+                                            <path d="M25 20 L45 32 L25 44 Z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Rational Analysis of In-context Learning</h5>
+                            <p class="card-text">Daniel Wurgaft(Stanford University)</p>
+                            <p class="card-text"><small class="text-muted">28 Jul 2026</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="ratio ratio-16x9 overflow-hidden" id="video-wrapper-1">
+        
+                            <div id="poster-1" class="poster-container" 
+                                style="cursor: pointer; position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
                                 onclick="startVideo('1', 'https://drive.google.com/file/d/1G-gAdGidTrye89rZQ09cj-87iOewN4om/preview')">
                                 
                                 <!-- use poster as figures -->
@@ -360,14 +391,22 @@
                             <th><font color="white">Poster</font></th>
                         </tr>
 		</thead>
-		<tbody>
+        <tbody>
+						<tr>
+                            <td>TBD</td>
+                            <td><a href="https://tmlr-group.github.io/seminars/TMLR_YSS.html" class="talk-link">TBD</a> </td>
+                            <td>TBD</td>
+                            <td><a href="https://tmlr-group.github.io/seminars/TMLR_YSS.html" class="btn btn-outline-primary btn-sm">View Poster</a></td>
+                        </tr>
+		</tbody>
+		<!-- <tbody>
 						<tr>
                             <td>11 May 2026</td>
                             <td><a href="https://chiyeunglaw.github.io/" class="talk-link">Ziyang Luo (Salesforce AI Research)</a> </td>
                             <td>Agentic RL: Lessons from Building the Full Training Loop</td>
                             <td><a href="Posters/tmlr_seminar_young_scientist_ZiyangLUO.pdf" class="btn btn-outline-primary btn-sm">View Poster</a></td>
                         </tr>
-		</tbody>
+		</tbody> -->
 	</table>
             </div>
         </section>
@@ -390,6 +429,27 @@
                         </tr>
 		</thead>
                     <tbody id="pastTalksBody">
+                        <tr>
+                            <td>28 Jul 2026</td>
+                            <td><a href="https://www.linkedin.com/in/daniel-wurgaft-4841b41b8/" class="talk-link">Daniel Wurgaft</a> (Stanford University)</td>
+                            <td>Rational Analysis of In-context Learning</td>
+                            <td><a href="Posters/tmlr_seminar_young_scientist_Daniel-Wurgaft.pdf" class="btn btn-outline-primary btn-sm">View Poster</a></td>
+                            <!-- <td><a href="" class="btn btn-outline-primary btn-sm">Video Record</a></td> -->
+                        </tr>
+                        <tr>
+                            <td>23 Jul 2026</td>
+                            <td><a href="https://jonsaadfalcon.com/" class="talk-link">Jon Saad-Falcon</a> (Stanford University)</td>
+                            <td>OpenJarvis: Personal AI, On Personal Devices</td>
+                            <td><a href="Posters/tmlr_seminar_young_scientist_Jon-Saad-Falcon.pdf" class="btn btn-outline-primary btn-sm">View Poster</a></td>
+                            <!-- <td><a href="" class="btn btn-outline-primary btn-sm">Video Record</a></td> -->
+                        </tr>
+                        <tr>
+                            <td>11 May 2026</td>
+                            <td><a href="https://chiyeunglaw.github.io/" class="talk-link">Ziyang Luo</a> (Salesforce AI Research)</td>
+                            <td>Agentic RL: Lessons from Building the Full Training Loop</td>
+                            <td><a href="Posters/tmlr_seminar_young_scientist_ZiyangLUO.pdf" class="btn btn-outline-primary btn-sm">View Poster</a></td>
+                            <!-- <td><a href="" class="btn btn-outline-primary btn-sm">Video Record</a></td> -->
+                        </tr>
                         <tr>
                             <td>30 Mar 2026</td>
                             <td><a href="https://joshua-ren.github.io/" class="talk-link">Yi Ren</a> (Oxford University)</td>
